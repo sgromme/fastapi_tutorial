@@ -6,12 +6,13 @@ Operating systems is WSL-2 Ubuntu-24.04.
 sudo apt install python3.12-venv
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+pip install -r requirements.txt ( add these lines fastapi uvicorn httpie requests httpx)
+pip install -r requirements-dev.txt ()
 
 pip install "fastapi[standard]"   # command line  uvicorn main:app --reload
 
 "python main.py &"  # this still takes the terminal with python , but it has uvicorn running in the background, and was hard to   #kill
-
+```
   223  ps aux | grep uvicorn
   224  kill 20440
   225  ps aux | grep uvicorn
@@ -32,15 +33,21 @@ pip install "fastapi[standard]"   # command line  uvicorn main:app --reload
   240  kill 16126
   241  kill 16129
   242  lsof -i :8000
+  ```
 
 
   ps aux | grep uvicorn | grep -v grep  # so you don't see the grep running
 
 ways to test:
-    browser
+    browser and navigate to localhost:8000
     cmd line http localhost:8000/ or http -b  localhost:8000/
     cmd line httpx  http://127.0.0.1:8000
     curl http://127.0.0.1:8000  or curl -v http://127.0.0.1:8000/
+
+
+
+
+
 
 
 
