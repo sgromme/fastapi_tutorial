@@ -1,15 +1,19 @@
 Fastapi tutorial.
 
 
+
 Operating systems is WSL-2 Ubuntu-24.04.
 
 sudo apt install python3.12-venv
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt ( add these lines fastapi uvicorn httpie requests httpx)
-pip install -r requirements-dev.txt ()
+pip install -r requirements-dev.txt ( black  ruff)
 
 pip install "fastapi[standard]"   # command line  uvicorn main:app --reload
+
+# set the variable ( not sure it this is needed or not)
+export PYTHONPATH=$PWD/src
 
 "python main.py &"  # this still takes the terminal with python , but it has uvicorn running in the background, and was hard to   #kill
 ```
@@ -43,6 +47,12 @@ ways to test:
     cmd line http localhost:8000/ or http -b  localhost:8000/
     cmd line httpx  http://127.0.0.1:8000
     curl http://127.0.0.1:8000  or curl -v http://127.0.0.1:8000/
+
+# HTTP request and response headers
+http -p HBh http://example.com/
+
+# Multiple Routers
+
 
 
 

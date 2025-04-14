@@ -1,6 +1,9 @@
 from fastapi import FastAPI
+from web import exployer
 
 app = FastAPI()
+
+app.include_router(exployer.router) # include the router
 
 @app.get("/") # root
 def top():
